@@ -28,6 +28,11 @@ class App extends React.Component {
         return (
             <div>
                 <img src="/images/isis-flag.jpg" alt="ISIS flag" />
+                <p>
+                    Supported file extensions: <br/>
+                    cpp, c, cc, js, cs, scl, tsx, ts, hs, sh, coffee, pl, rb, py. <br/>
+                    For unsupported extensions, system will prompt you to specify a comment identifier.
+                </p>
 
                 <div style={{width: "100%", display: "block"}}>
                     <FilesUpload files={this.state.files} handleFileAdd={this.handleFileAdd} />
