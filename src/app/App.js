@@ -23,11 +23,11 @@ class App extends React.Component {
     }
 
     render() {
-        var files = this.state.files;
+        const {files, isis_phrases_list } = this.state;
 
         return (
             <div>
-                <img src="/images/isis-flag.jpg" />
+                <img src="/images/isis-flag.jpg" alt="ISIS flag" />
 
                 <div style={{width: "100%", display: "block"}}>
                     <FilesUpload files={this.state.files} handleFileAdd={this.handleFileAdd} />
@@ -36,9 +36,11 @@ class App extends React.Component {
                 <br/>
 
                 <div style={{width: "100%", display: "block"}}>
-                    { files.map( file => (
+                    { files.map( (file, index) => (
                         <File 
                             file={file}
+                            key={index}
+                            isis_phrases_list={isis_phrases_list}
                         />
                     ))}
                 </div>

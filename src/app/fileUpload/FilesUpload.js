@@ -1,6 +1,5 @@
 import React from 'react';
 import Dropzone from 'react-dropzone'
-import ReactDOM from 'react-dom';
 import './FilesUpload.css';
 
 class FilesUpload extends React.Component {
@@ -37,7 +36,7 @@ class FilesUpload extends React.Component {
                 <div className="file-info-area">
                     <button 
                         onClick={this.submitFiles}
-                        disabled={fileReaders.length == 0}
+                        disabled={fileReaders.length === 0}
                     > 
                         Upload 
                     </button> 
@@ -98,14 +97,14 @@ class FilesUpload extends React.Component {
     }
 
     submitFiles(){
-        if(this.state.fileReaders.length == 0){
+        if(this.state.fileReaders.length === 0){
             this.setState({
                 msg: 'No file provided. <br/>'
             });
             return;
         }
 
-        this.state.fileReaders.map( (fr) =>{
+        this.state.fileReaders.forEach( (fr) =>{
             fr.reader.readAsText(fr.meta);
         });
         
