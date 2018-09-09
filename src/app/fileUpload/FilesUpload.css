@@ -1,0 +1,16 @@
+.dropzone {
+    float: left;
+    width: 350px;
+    height: 200px;
+    border-width: 2px;
+    border-color: rgb(102, 102, 102);
+    border-style: dashed;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+}
+
+.file-info-area {
+    display: inline-block;
+    height: 200px;
+    margin: 10px 10px 10px 10px;
+}
