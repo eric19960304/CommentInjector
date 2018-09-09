@@ -30,7 +30,7 @@ class App extends React.Component {
                 <img src="/images/isis-flag.jpg" alt="ISIS flag" />
                 <p>
                     Supported file extensions: <br/>
-                    cpp, c, cc, js, cs, scl, tsx, ts, hs, sh, coffee, pl, rb, py. <br/>
+                    cpp, c, cc, java, js, cs, scl, tsx, ts, hs, sh, coffee, pl, rb, py. <br/>
                     For unsupported extensions, system will prompt you to specify a comment identifier.
                 </p>
 

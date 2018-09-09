@@ -1,6 +1,6 @@
 
 const commentToken = {
-    "//": ["cpp", "c", "cc", "js", "cs", "scl", "tsx", "ts"],
+    "//": ["cpp", "c", "cc", "java", "js", "cs", "scl", "tsx", "ts"],
     "#": ["hs", "sh", "coffee", "pl", "rb", "py"] 
 };
 
