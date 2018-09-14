@@ -34,3 +34,17 @@ h1 {
   font-size: 40px; 
   font-weight: bold;
 }
+
+textarea {
+  resize: none;
+}
+
+.input-textarea {
+  display: inline-block; 
+  padding: 5px 5px 5px 5px;
+}
+
+.output-textarea {
+  display: inline-block; 
+  padding: 5px 5px 5px 5px;
+}

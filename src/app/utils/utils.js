@@ -50,6 +50,4 @@ const addComments = (input, extension, isis_phrases_list) => {
     return commentedText;
 }
 
-
-
 export { addComments };

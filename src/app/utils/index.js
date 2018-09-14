@@ -1,3 +1,3 @@
-import { addComments  } from './utils';
+import { addComments } from './utils';
 
 export { addComments };
