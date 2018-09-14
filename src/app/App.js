@@ -74,7 +74,7 @@ class App extends React.Component {
                 </div>
                 <div className={"output-textarea"}>
                     output:<br/>
-                    <textarea rows="28" cols="45" value={output} readOnly={true}></textarea>
+                    <textarea rows="28" cols="40" value={output} readOnly={true}></textarea>
                 </div>
                 <button style={{display: "block"}} onClick={this.injectComment}>Inject comment!</button>
                 <p>
