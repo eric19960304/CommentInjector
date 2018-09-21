@@ -43,8 +43,8 @@ const addComments = (input, extension, comment_list) => {
         return result;
     });
 
-    
-    let commentedText = token + comment_list[0] + "\n" + newLines.join("\n");
+    const phrasesIdx = Math.floor((Math.random() * comment_list.length));
+    let commentedText = token + comment_list[phrasesIdx] + "\n" + newLines.join("\n");
 
 
     return commentedText;
