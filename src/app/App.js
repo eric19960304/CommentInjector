@@ -54,7 +54,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <img src="/images/cover.jpg" alt="Shakespeare" />
+                <img src="/images/cover.jpg" style={{width: "800px"}} alt="Shakespeare" />
                 <p>
                     This web app allow you to inject Shakespeare's quotes into your 
                     <a href="https://searchmicroservices.techtarget.com/definition/source-code">source code</a> as comments.
@@ -63,11 +63,11 @@ class App extends React.Component {
                     extension:<br/>
                     <textarea rows="1" cols="20" value={extensions} onChange={this.onTextAreaChange('extensions')}></textarea><br/>
                     source code:<br/>
-                    <textarea rows="28" cols="40" value={input} onChange={this.onTextAreaChange('input')}></textarea>
+                    <textarea rows="20" cols="60" value={input} onChange={this.onTextAreaChange('input')}></textarea>
                 </div>
                 <div className={"output-textarea"}>
                     output:<br/>
-                    <textarea rows="28" cols="40" value={output} readOnly={true}></textarea>
+                    <textarea rows="20" cols="60" value={output} readOnly={true}></textarea>
                 </div>
                 <button style={{display: "block"}} onClick={this.injectComment}>Inject comment!</button>
                 <p>
