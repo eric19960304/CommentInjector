@@ -46,7 +46,7 @@ class App extends React.Component {
             }
             */
             files: [],
-            isis_phrases_list: [],
+            comment_list: [],
             input: defaultInput,
             extensions: defaultExtension,
             output: "",
@@ -57,14 +57,14 @@ class App extends React.Component {
     }
 
     render() {
-        const {files, isis_phrases_list, input, extensions, output } = this.state;
+        const {files, comment_list, input, extensions, output } = this.state;
 
         return (
             <div>
-                <img src="/images/isis-flag.jpg" alt="ISIS flag" />
+                <img src="/images/cover.jpg" alt="Shakespeare" />
                 <p>
-                    This web app allow you to inject various Arabic comments into your 
-                    <a href="https://searchmicroservices.techtarget.com/definition/source-code">source code</a>.
+                    This web app allow you to inject Shakespeare's quotes into your 
+                    <a href="https://searchmicroservices.techtarget.com/definition/source-code">source code</a> as comments.
                 </p>
                 <div className={"input-textarea"}>
                     extension:<br/>
@@ -93,7 +93,7 @@ class App extends React.Component {
                         <File 
                             file={file}
                             key={index}
-                            isis_phrases_list={isis_phrases_list}
+                            comment_list={comment_list}
                         />
                     ))}
                 </div>
@@ -103,13 +103,13 @@ class App extends React.Component {
     }
 
     componentWillMount(){
-        var isis_phrases_list;
-        fetch('isis_phrases.txt')
+        var comment_list;
+        fetch('comment_list.txt')
             .then(data => data.text())
             .then(text => {
-                isis_phrases_list = text.split('\n');
+                comment_list = text.split('\n');
                 this.setState({
-                    isis_phrases_list
+                    comment_list
                 });
             })
     }
@@ -122,8 +122,8 @@ class App extends React.Component {
     }
 
     injectComment(){
-        const { input, extensions, isis_phrases_list } = this.state;
-        const result = addComments(input, extensions, isis_phrases_list);
+        const { input, extensions, comment_list } = this.state;
+        const result = addComments(input, extensions, comment_list);
         this.setState({
             output: result
         }); 

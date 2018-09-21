@@ -16,7 +16,7 @@ const findCommentTokenFromExtension = (ext) => {
     return result;
 }
 
-const addComments = (input, extension, isis_phrases_list) => {
+const addComments = (input, extension, comment_list) => {
     let token = findCommentTokenFromExtension(extension);
     const lines = input.split("\n");
 
@@ -35,8 +35,8 @@ const addComments = (input, extension, isis_phrases_list) => {
             const tabsNum = line[0]==="\t" ? line.split(/[^\t]/)[0].length : 0;
             const prefixtabs = tabsNum >=0 ? "\t".repeat(tabsNum) : "";
 
-            const phrasesIdx = Math.floor((Math.random() * isis_phrases_list.length));
-            result += prefixtabs + prefixSpaces + token + isis_phrases_list[phrasesIdx] + "\n";
+            const phrasesIdx = Math.floor((Math.random() * comment_list.length));
+            result += prefixtabs + prefixSpaces + token + comment_list[phrasesIdx] + "\n";
         }
 
         result += line;
@@ -44,7 +44,7 @@ const addComments = (input, extension, isis_phrases_list) => {
     });
 
     
-    let commentedText = token + isis_phrases_list[0] + "\n" + newLines.join("\n");
+    let commentedText = token + comment_list[0] + "\n" + newLines.join("\n");
 
 
     return commentedText;

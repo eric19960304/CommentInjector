@@ -13,7 +13,7 @@ class File extends React.Component {
         */
 
         this.state = {
-            isis_source_code: null,
+            source_code: null,
         }
 
         this.export = this.export.bind(this);
@@ -29,8 +29,8 @@ class File extends React.Component {
                 <div className="round-border">
                     {file.meta.name}
                 </div>
-                { !this.state.isis_source_code?
-                    <button onClick={this.addComments}>Inject ISIS comments</button>
+                { !this.state.source_code?
+                    <button onClick={this.addComments}>Inject quotes!</button>
                     :
                     <div style={{display: "inline-block"}}>
                         <button onClick={this.export}>Download result</button>
@@ -43,7 +43,7 @@ class File extends React.Component {
     }
 
     addComments(){
-        const {file, isis_phrases_list} = this.props;
+        const {file, comment_list} = this.props;
 
 
         if (!file || !file.text) {
@@ -51,20 +51,20 @@ class File extends React.Component {
         }
 
         const extension = file.meta.name.split('.').pop();
-        var isis_source_code = addComments(file.text, extension, isis_phrases_list);
+        var source_code = addComments(file.text, extension, comment_list);
 
         this.setState({
-            isis_source_code,
+            source_code,
         });
     }
 
 
     export() {
-        let export_file = this.state.isis_source_code;
+        let export_file = this.state.source_code;
         var element = document.createElement("a");
         var file = new Blob([export_file], {type: 'text/plain'});
         element.href = URL.createObjectURL(file);
-        element.download = 'ISIS_' + this.props.file.meta.name;
+        element.download = 'done_' + this.props.file.meta.name;
         element.click();
     }
 

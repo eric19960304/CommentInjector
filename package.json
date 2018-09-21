@@ -1,5 +1,5 @@
 {
-  "name": "isiscommentmaker",
+  "name": "commentinjector",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
