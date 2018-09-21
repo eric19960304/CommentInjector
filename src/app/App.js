@@ -7,24 +7,17 @@ import './App.css';
 const defaultInput=`#include <iostream>
 using namespace std;
 
-void permute(string a, int i, int n)
-{
-   int j;
-   if (i == n)
-     cout << a << endl;
-   else
-   {
-       for (j = i; j <= n; j++)
-       {
-          swap(a[i], a[j]);          
-          permute(a, i+1, n);
-          swap(a[i], a[j]);
-       }
-   }
+void permute(string a, int i, int n) {
+   if (i == n) cout << a << endl;
+
+    for (int j = i; j <= n; j++) {
+        swap(a[i], a[j]);          
+        permute(a, i+1, n);
+        swap(a[i], a[j]);
+    }
 } 
 
-int main()
-{
+int main() {
    string a = "ABC";
    permute(a, 0, a.length()-1);
    return 0;
